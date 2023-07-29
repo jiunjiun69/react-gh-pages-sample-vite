@@ -5,6 +5,12 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [str, setStr] = useState('林修同87'); // 新增一個狀態 str，初始為 '林修同87'
+
+  const handleButtonClick = () => {
+    // 按鈕點擊時，將 '87' 字串連接在一起
+    setStr((prevStr) => prevStr + '87');
+  };
 
   return (
     <>
@@ -18,6 +24,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <p>
+          {/* 顯示連接後的字串 */}
+          87 string: {str}
+        </p>
+        <button onClick={handleButtonClick}>Concatenate '87'</button> {/* 新增的按鈕 */}
+
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
